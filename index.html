@@ -1,196 +1,210 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh - CN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF - 8">
+    <meta name="viewport" content="width=device - width, initial - scale = 1.0">
     <title>后室中文数据库</title>
-    <link rel="icon" href="https://static.wikitide.net/backroomszhwiki/thumb/1/16/SiteLogo.png/400px-SiteLogo.png">
+    <link rel="icon" href="https://static.wikitide.net/backroomszhwiki/thumb/1/16/SiteLogo.png/400px - SiteLogo.png">
     <style>
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+   .container {
+            width: 100%;
+            max - width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box - sizing: border - box;
+        }
 
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-    }
+        h1 {
+            font - size: 2.5rem;
+            text - align: center;
+        }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
+        p {
+            font - size: 1.2rem;
+            line - height: 1.6;
+        }
 
-    img, video {
-      max-width: 100%;
-      height: auto;
-    }
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
+        img,
+        video {
+            max - width: 100%;
+            height: auto;
+        }
 
-      p {
-        font-size: 1rem;
-      }
-    }
+        @media (max - width: 768px) {
+            h1 {
+                font - size: 2rem;
+            }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5rem;
-      }
+            p {
+                font - size: 1rem;
+            }
+        }
 
-      p {
-        font-size: 0.9rem;
-      }
-    }
+        @media (max - width: 480px) {
+            h1 {
+                font - size: 1.5rem;
+            }
+
+            p {
+                font - size: 0.9rem;
+            }
+        }
+
         :root {
-            --main-color: #2a2a2a;
-            --accent-color: #00cc99;
-            --text-color: #e0e0e0;
+            --main - color: #2a2a2a;
+            --accent - color: #00cc99;
+            --text - color: #e0e0e0;
         }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
-            color: var(--text-color);
-            line-height: 1.6;
+            font - family: 'Segoe UI', sans - serif;
+            background: linear - gradient(45deg, #1a1a1a, #2d2d2d);
+            color: var(--text - color);
+            line - height: 1.6;
             margin: 0;
-            min-height: 100vh;
+            min - height: 100vh;
             position: relative;
         }
 
         /* 背景图片容器 */
         #background {
-            position: fixed; /* 使用 fixed 定位 */
+            position: fixed;
+            /* 使用 fixed 定位 */
             top: -10%;
             left: -10%;
             width: 120%;
             height: 120%;
-            background: url('https://static.wikitide.net/backroomszhwiki/4/40/IMG_0407.jpeg') no-repeat center center/cover;
-            z-index: -1;
-            will-change: transform;
+            background: url('https://static.wikitide.net/backroomszhwiki/4/40/IMG_0407.jpeg') no - repeat center center/cover;
+            z - index: -1;
+            will - change: transform;
             filter: blur(2px);
         }
 
-        .container {
-            max-width: 800px;
+     .container {
+            max - width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            text-align: center;
-            border: 2px solid var(--accent-color);
-            box-shadow: 0 0 20px var(--accent-color);
-            border-radius: 10px;
+            text - align: center;
+            border: 2px solid var(--accent - color);
+            box - shadow: 0 0 20px var(--accent - color);
+            border - radius: 10px;
             background: rgba(0, 0, 0, 0.5);
-            position: relative; /* 确保内容在背景之上 */
-            z-index: 1;
+            position: relative;
+            /* 确保内容在背景之上 */
+            z - index: 1;
         }
 
-        .title {
-            font-size: 2.5rem;
-            text-shadow: 0 0 10px var(--accent-color);
+     .title {
+            font - size: 2.5rem;
+            text - shadow: 0 0 10px var(--accent - color);
             animation: flicker 3s infinite;
         }
 
         /* 导航栏美化 */
-        .nav {
+     .nav {
             background: rgba(0, 0, 0, 0.5);
             padding: 1rem;
-            border-bottom: 1px solid var(--accent-color);
+            border - bottom: 1px solid var(--accent - color);
             display: flex;
-            align-items: center;
-            justify-content: center;
-            position: sticky; /* 导航栏固定在顶部 */
+            align - items: center;
+            justify - content: center;
+            position: sticky;
+            /* 导航栏固定在顶部 */
             top: 0;
-            z-index: 2;
+            z - index: 2;
         }
 
-        .nav a {
-            color: var(--text-color);
-            text-decoration: none;
+     .nav a {
+            color: var(--text - color);
+            text - decoration: none;
             margin: 0 1rem;
             padding: 0.5rem 1.5rem;
-            border-radius: 25px;
+            border - radius: 25px;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             background: rgba(0, 0, 0, 0.3);
         }
 
-        .nav a::before {
+     .nav a::before {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             width: 300%;
             height: 300%;
-            background: radial-gradient(circle, rgba(0, 204, 153, 0.3), transparent);
+            background: radial - gradient(circle, rgba(0, 204, 153, 0.3), transparent);
             transform: translate(-50%, -50%) scale(0);
             transition: transform 0.5s ease;
-            border-radius: 50%;
+            border - radius: 50%;
         }
 
-        .nav a:hover {
-            color: var(--accent-color);
-            text-shadow: 0 0 8px var(--accent-color);
-            box-shadow: 0 0 15px var(--accent-color);
+     .nav a:hover {
+            color: var(--accent - color);
+            text - shadow: 0 0 8px var(--accent - color);
+            box - shadow: 0 0 15px var(--accent - color);
             background: rgba(0, 0, 0, 0.5);
             transform: scale(1.05);
         }
 
-        .nav img {
+     .nav img {
             height: 40px;
-            margin-right: 1rem;
-            vertical-align: middle;
-            filter: drop-shadow(0 0 5px var(--accent-color));
+            margin - right: 1rem;
+            vertical - align: middle;
+            filter: drop - shadow(0 0 5px var(--accent - color));
         }
 
-        .portal-button {
+     .portal - button {
             background: transparent;
-            border: 2px solid var(--accent-color);
-            color: var(--text-color);
+            border: 2px solid var(--accent - color);
+            color: var(--text - color);
             padding: 1rem 2rem;
             margin: 2rem;
             cursor: pointer;
             transition: 0.3s;
         }
 
-        .portal-button:hover {
-            background: linear-gradient(45deg, var(--accent-color), #00aaff);
-            box-shadow: 0 0 20px var(--accent-color);
+     .portal - button:hover {
+            background: linear - gradient(45deg, var(--accent - color), #00aaff);
+            box - shadow: 0 0 20px var(--accent - color);
             transform: scale(1.05);
         }
 
         @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
         }
 
         /* 确保footer没有背景图片 */
         footer {
             position: relative;
-            z-index: 1;
+            z - index: 1;
             background: rgba(0, 0, 0, 0.7);
-            text-align: center;
+            text - align: center;
             padding: 1rem;
-            margin-top: 2rem;
+            margin - top: 2rem;
         }
-		  footer a {
-				color: white;
-		  }
+
+        footer a {
+            color: white;
+        }
 
         /* 页面内容排版优化 */
-        .container p {
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+     .container p {
+            line - height: 1.8;
+            margin - bottom: 1.5rem;
         }
 
-        .container h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+     .container h2 {
+            margin - top: 2rem;
+            margin - bottom: 1rem;
         }
 
         /* 加载动画 */
@@ -200,28 +214,52 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--main-color);
+            background: var(--main - color);
             display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
+            justify - content: center;
+            align - items: center;
+            z - index: 1000;
         }
 
         #loading div {
-            border: 4px solid var(--accent-color);
-            border-top: 4px solid transparent;
-            border-radius: 50%;
+            border: 4px solid var(--accent - color);
+            border - top: 4px solid transparent;
+            border - radius: 50%;
             width: 40px;
             height: 40px;
             animation: spin 0.5s linear infinite;
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 新增子菜单样式 */
+        #submenu {
+            display: none;
+            position: relative;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border: 1px solid var(--accent - color);
+            border - radius: 5px;
+            box - shadow: 0 0 10px var(--accent - color);
+            margin - top: 5px;
+        }
+
+        #submenu a {
+            color: var(--text - color);
+            text - decoration: none;
+            margin: 0 10px;
         }
     </style>
 </head>
+
 <body>
     <!-- 加载动画 -->
     <div id="loading">
@@ -232,22 +270,25 @@
     <div id="background"></div>
 
     <nav class="nav">
-        <img src="https://static.wikitide.net/backroomszhwiki/thumb/1/16/SiteLogo.png/400px-SiteLogo.png" 
-             style="height: 40px; margin-right: 1rem; vertical-align: middle;">
-        <a href="https://backroomszh.wiki/wiki/层级列表" target="_blank">层级</a>
-        <a href="https://backroomszh.wiki/wiki/实体列表">实体</a>
-        <a href="https://backroomszh.wiki/wiki/物品列表">物品</a>
-        <a href="https://backroomszh.wiki/wiki/效应列表">效应</a>
-    </nav><br><br>
+        <img src="https://static.wikitide.net/backroomszhwiki/thumb/1/16/SiteLogo.png/400px - SiteLogo.png"
+            style="height: 40px; margin - right: 1rem; vertical - align: middle;">
+        <a href="#" id="levelsLink">层级</a>
+        <a href="#" id="entitiesLink">实体</a>
+        <a href="#" id="itemsLink">物品</a>
+        <a href="#" id="effectsLink">效应</a>
+    </nav>
+
+    <!-- 新增子菜单 -->
+    <div id="submenu"></div>
 
     <div class="container">
         <h1 class="title">The Backrooms</h1>
         <small>你曾经来过这里</small><br>
-        
+
         <p><i>“假如你在异常的地方从现实中脱离，你最后会来到后室。这里除了无尽、空荡的黄色走廊、阴暗的黄色荧光灯光、坑坑洼洼的潮湿地毯和日光灯那令人发狂的嗡嗡声以外几乎什么也没有。如果你听见周围有什么响动，愿神保佑,因为它一定也发现了你……”</i></p>
-        
+
         <a href="https://backroomszh.wiki/wiki/Home" target="_blank">
-            <a href="https://backroomszh.wiki/wiki/Home"><button class="portal-button"><big> 进入数据库 </big></button></a>
+            <a href="https://backroomszh.wiki/wiki/Home"><button class="portal - button"><big> 进入数据库 </big></button></a>
         </a>
 
         <section id="about">
@@ -266,25 +307,69 @@
 
     <footer>
         <small>© 后室中文数据库 - 版权所有</small><br>
-<small>
+        <small>
             <a href="https://backroomszh.wiki/wiki/Project:免责声明" target="_blank">免责声明</a> |
             <a href="mailto:contact@backroomszh.wiki">站务邮箱</a>
         </small>
     </footer>
 
     <script>
-        // 页面加载完成后初始化背景动画
         document.addEventListener('DOMContentLoaded', function () {
-            const elements = document.querySelectorAll('h1, h2, p, a, button, small, .nav a, .container, footer');
+            const levelsLink = document.getElementById('levelsLink');
+            const entitiesLink = document.getElementById('entitiesLink');
+            const itemsLink = document.getElementById('itemsLink');
+            const effectsLink = document.getElementById('effectsLink');
+            const submenu = document.getElementById('submenu');
+            let hideTimer;
+
+            function showSubmenu(content) {
+                clearTimeout(hideTimer);
+                submenu.innerHTML = content;
+                submenu.style.display = 'block';
+            }
+
+            function hideSubmenu() {
+                hideTimer = setTimeout(() => {
+                    submenu.style.display = 'none';
+                }, 2000);
+            }
+
+            levelsLink.addEventListener('mouseenter', function () {
+                showSubmenu(`<a href="https://backroomszh.wiki/CN层级" target="_blank">CN层级</a> | <a href="https://backroomszh.wiki/wiki/层级列表" target="_blank">层级列表</a>`);
+            });
+
+            entitiesLink.addEventListener('mouseenter', function () {
+                showSubmenu(`<a href="https://backroomszh.wiki/CN实体" target="_blank">CN实体</a> | <a href="https://backroomszh.wiki/wiki/实体列表" target="_blank">实体列表</a>`);
+            });
+
+            itemsLink.addEventListener('mouseenter', function () {
+                showSubmenu(`<a href="https://backroomszh.wiki/CN物品" target="_blank">CN物品</a> | <a href="https://backroomszh.wiki/wiki/物品列表" target="_blank">物品列表</a>`);
+            });
+
+            effectsLink.addEventListener('mouseenter', function () {
+                showSubmenu(`<a href="https://backroomszh.wiki/CN效应" target="_blank">CN效应</a> | <a href="https://backroomszh.wiki/wiki/效应列表" target="_blank">效应列表</a>`);
+            });
+
+            const links = [levelsLink, entitiesLink, itemsLink, effectsLink];
+            links.forEach(function (link) {
+                link.addEventListener('mouseleave', hideSubmenu);
+            });
+
+            submenu.addEventListener('mouseenter', function () {
+                clearTimeout(hideTimer);
+            });
+
+            submenu.addEventListener('mouseleave', hideSubmenu);
+
+            const elements = document.querySelectorAll('h1, h2, p, a, button, small,.nav a,.container, footer');
             elements.forEach((el, index) => {
                 el.style.opacity = 0;
                 setTimeout(() => {
-                    el.style.transition = `opacity 2s ease-in ${index * 0.2}s`;
+                    el.style.transition = `opacity 2s ease - in ${index * 0.2}s`;
                     el.style.opacity = 1;
                 }, 50);
             });
 
-            // 背景图片反弹动画
             const background = document.getElementById('background');
             let posX = 0;
             let posY = 0;
@@ -310,7 +395,6 @@
 
             animateBackground();
 
-            // 隐藏加载动画
             const loading = document.getElementById('loading');
             setTimeout(() => {
                 loading.style.display = 'none';
@@ -318,4 +402,5 @@
         });
     </script>
 </body>
+
 </html>
